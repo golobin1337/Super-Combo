@@ -1,0 +1,145 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --creme: #FFF9F0;
+  --creme-escuro: #FBEEDC;
+  --terracota: #E8743B;
+  --terracota-escuro: #C85A28;
+  --verde: #5B8C51;
+  --verde-escuro: #3E6336;
+  --mostarda: #E8A317;
+  --vinho: #A23E48;
+  --marrom: #4A2F1A;
+  --texto: #3A2817;
+  --texto-muted: #7A6453;
+  --branco: #FFFFFF;
+  --preto-bf: #1A1512;
+}
+
+body { font-family: 'Nunito', sans-serif; color: var(--texto); background: var(--creme); overflow-x: hidden; }
+
+/* TOPBAR BLACK FRIDAY */
+.topbar { background: var(--preto-bf); color: white; text-align: center; padding: 11px 20px; font-size: 14px; font-weight: 700; letter-spacing: 0.5px; }
+.topbar span { background: var(--mostarda); color: var(--preto-bf); border-radius: 20px; padding: 2px 12px; font-weight: 900; margin: 0 4px; }
+
+/* HERO */
+.hero { background: linear-gradient(180deg, #FFF9F0 0%, #FBEEDC 100%); padding: 52px 24px 48px; text-align: center; position: relative; overflow: hidden; border-bottom: 4px solid var(--terracota); }
+.hero::before { content: ''; position: absolute; top: -90px; left: -90px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(232,116,59,0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+.hero::after { content: ''; position: absolute; bottom: -90px; right: -90px; width: 340px; height: 340px; background: radial-gradient(circle, rgba(91,140,81,0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+
+.badge-bf { display: inline-flex; align-items: center; gap: 8px; background: var(--preto-bf); color: var(--mostarda); border-radius: 30px; padding: 7px 20px; font-size: 13px; font-weight: 900; margin-bottom: 22px; letter-spacing: 1px; text-transform: uppercase; position: relative; z-index: 1; }
+.badge-bf .dot { width: 7px; height: 7px; background: var(--terracota); border-radius: 50%; animation: pulse 1.4s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.6); } }
+
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 58px); font-weight: 900; color: var(--marrom); line-height: 1.1; margin-bottom: 18px; position: relative; z-index: 1; }
+.hero h1 em { font-style: normal; color: var(--terracota); }
+.hero h1 .verde { color: var(--verde); }
+
+.hero-sub { font-size: clamp(16px, 2.3vw, 20px); color: var(--texto-muted); max-width: 660px; margin: 0 auto 28px; line-height: 1.6; font-weight: 500; position: relative; z-index: 1; }
+.hero-sub strong { color: var(--marrom); font-weight: 800; }
+
+.mega-num { display: inline-block; background: var(--verde); color: white; font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(15px, 2.3vw, 19px); padding: 6px 18px; border-radius: 30px; margin-bottom: 28px; position: relative; z-index: 1; }
+
+.hero-img-placeholder { max-width: 640px; width: 100%; margin: 0 auto 32px; aspect-ratio: 16/10; background: repeating-linear-gradient(45deg, #F3E2CB, #F3E2CB 14px, #EFD9BC 14px, #EFD9BC 28px); border: 2px dashed var(--terracota); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--terracota-escuro); font-size: 15px; letter-spacing: 0.5px; position: relative; z-index: 1; text-align: center; padding: 20px; }
+
+.cta-btn { display: inline-block; background: linear-gradient(135deg, var(--terracota) 0%, var(--terracota-escuro) 100%); color: white; font-family: 'Nunito', sans-serif; font-size: clamp(18px, 3vw, 23px); font-weight: 900; padding: 19px 40px; border-radius: 50px; text-decoration: none; border: none; box-shadow: 0 8px 26px rgba(232,116,59,0.45); transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; cursor: pointer; max-width: 100%; z-index: 1; }
+.cta-btn::after { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transform: skewX(-20deg); animation: shimmer 2.8s ease-in-out infinite; }
+@keyframes shimmer { 0% { left: -100%; } 100% { left: 200%; } }
+.cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 34px rgba(232,116,59,0.55); }
+
+.preco-hero { margin-top: 20px; font-size: 15px; color: var(--texto-muted); position: relative; z-index: 1; }
+.preco-hero .de { text-decoration: line-through; opacity: 0.55; }
+.preco-hero strong { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--terracota); font-weight: 900; }
+.garantia-mini { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 13px; color: var(--texto-muted); margin-top: 12px; position: relative; z-index: 1; }
+
+/* SEÇÕES */
+section { padding: 64px 24px; }
+.container { max-width: 960px; margin: 0 auto; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 38px); font-weight: 700; text-align: center; margin-bottom: 12px; color: var(--marrom); line-height: 1.2; }
+.section-sub { text-align: center; color: var(--texto-muted); font-size: 17px; max-width: 620px; margin: 0 auto 40px; line-height: 1.6; }
+
+/* O QUE VEM - GRID DOS 13 */
+.sec-tudo { background: var(--branco); }
+.tudo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.tudo-card { background: var(--creme); border: 2px solid var(--creme-escuro); border-radius: 16px; padding: 18px 18px; display: flex; align-items: center; gap: 14px; transition: transform 0.2s, border-color 0.2s; }
+.tudo-card:hover { transform: translateY(-3px); border-color: var(--terracota); }
+.tudo-card .ic { font-size: 30px; flex-shrink: 0; line-height: 1; }
+.tudo-card .txt { font-size: 14px; font-weight: 700; color: var(--marrom); line-height: 1.3; }
+.tudo-card .txt small { display: block; font-weight: 600; color: var(--texto-muted); font-size: 12px; margin-top: 2px; }
+
+.total-receitas { text-align: center; margin-top: 36px; background: var(--verde-claro, #EDF4EB); border: 2px solid var(--verde); border-radius: 20px; padding: 24px; max-width: 560px; margin-left: auto; margin-right: auto; }
+.total-receitas .big { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 900; color: var(--verde-escuro); line-height: 1; }
+.total-receitas p { font-size: 15px; color: var(--texto-muted); margin-top: 6px; font-weight: 600; }
+
+/* ANCORAGEM DE VALOR */
+.sec-valor { background: var(--creme-escuro); }
+.valor-box { max-width: 620px; margin: 0 auto; background: white; border-radius: 24px; padding: 36px; border: 2px solid var(--terracota); }
+.valor-linha { display: flex; justify-content: space-between; align-items: center; padding: 11px 0; border-bottom: 1px dashed #E0CDB4; font-size: 15px; color: var(--texto-muted); }
+.valor-linha:last-of-type { border-bottom: none; }
+.valor-linha .preco { font-weight: 700; color: var(--marrom); }
+.valor-total { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; padding-top: 18px; border-top: 2px solid var(--marrom); font-size: 17px; font-weight: 800; color: var(--marrom); }
+.valor-total .riscado { text-decoration: line-through; color: var(--vinho); font-size: 22px; }
+.valor-hoje { text-align: center; margin-top: 24px; }
+.valor-hoje .label { font-size: 15px; color: var(--texto-muted); font-weight: 600; }
+.valor-hoje .num { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 900; color: var(--terracota); line-height: 1; }
+.valor-hoje .num span { font-size: 26px; vertical-align: super; }
+
+/* PARA QUEM / BENEFÍCIOS */
+.sec-beneficios { background: var(--branco); }
+.benef-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.benef-card { background: var(--creme); border-radius: 16px; padding: 24px 22px; text-align: center; border: 1.5px solid var(--creme-escuro); }
+.benef-card .ic { font-size: 40px; display: block; margin-bottom: 12px; }
+.benef-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--marrom); margin-bottom: 6px; }
+.benef-card p { font-size: 14px; color: var(--texto-muted); line-height: 1.5; }
+
+/* CARROSSEL / PRÉVIA */
+.sec-carrossel { background: var(--creme-escuro); }
+.carrossel-wrapper { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+.carrossel-track-outer { overflow: hidden; flex: 1; border-radius: 16px; }
+.carrossel-track { display: flex; gap: 16px; transition: transform 0.4s ease; will-change: transform; }
+.carr-slide { flex: 0 0 calc((100% - 32px) / 3); border-radius: 14px; overflow: hidden; aspect-ratio: 3/4; }
+.carr-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.carr-placeholder { background: repeating-linear-gradient(45deg, #F3E2CB, #F3E2CB 12px, #EFD9BC 12px, #EFD9BC 24px); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--terracota-escuro); border: 2px dashed var(--terracota); }
+.carr-btn { background: var(--terracota); color: white; border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 26px; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.carr-btn:hover { background: var(--terracota-escuro); transform: scale(1.08); }
+.carr-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+.carr-dot { width: 10px; height: 10px; border-radius: 50%; background: #D9C3A6; cursor: pointer; transition: background 0.2s, transform 0.2s; border: none; }
+.carr-dot.ativo { background: var(--terracota); transform: scale(1.3); }
+@media (max-width: 600px) { .carr-slide { flex: 0 0 calc((100% - 16px) / 2); } .carr-btn { width: 36px; height: 36px; font-size: 20px; } }
+@media (max-width: 400px) { .carr-slide { flex: 0 0 100%; } }
+
+/* OFERTA */
+.sec-oferta { background: var(--preto-bf); color: white; }
+.oferta-box { max-width: 680px; margin: 0 auto; background: rgba(255,255,255,0.05); border-radius: 28px; border: 2px solid var(--mostarda); padding: 44px 40px; text-align: center; }
+.oferta-box .titulo { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 32px); font-weight: 900; margin-bottom: 6px; color: var(--mostarda); }
+.oferta-box .subtitulo { font-size: 16px; opacity: 0.8; margin-bottom: 28px; }
+.inclui-lista { list-style: none; text-align: left; margin-bottom: 28px; display: grid; gap: 10px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.inclui-lista li { display: flex; align-items: center; gap: 11px; font-size: 14.5px; font-weight: 600; }
+.inclui-lista li::before { content: '✓'; background: var(--terracota); color: white; width: 21px; height: 21px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 12px; flex-shrink: 0; }
+.preco-box { background: rgba(255,255,255,0.07); border-radius: 16px; padding: 24px; margin-bottom: 26px; border: 1px solid rgba(232,163,23,0.4); }
+.preco-de { font-size: 16px; opacity: 0.6; text-decoration: line-through; margin-bottom: 4px; }
+.preco-por { font-family: 'Playfair Display', serif; font-size: clamp(50px, 11vw, 68px); font-weight: 900; line-height: 1; color: var(--mostarda); }
+.preco-por span { font-size: 26px; vertical-align: super; font-weight: 700; }
+.preco-por .cents { font-size: 38px; vertical-align: baseline; }
+.preco-detalhe { font-size: 14px; opacity: 0.75; margin-top: 6px; }
+.cta-btn-bf { display: block; background: linear-gradient(135deg, var(--terracota) 0%, var(--terracota-escuro) 100%); color: white; font-family: 'Nunito', sans-serif; font-size: clamp(18px, 3vw, 23px); font-weight: 900; padding: 19px 40px; border-radius: 50px; text-decoration: none; cursor: pointer; border: none; box-shadow: 0 8px 26px rgba(232,116,59,0.4); transition: transform 0.2s, box-shadow 0.2s; width: 100%; }
+.cta-btn-bf:hover { transform: translateY(-3px); box-shadow: 0 12px 34px rgba(232,116,59,0.55); }
+.garantia-box { margin-top: 18px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; opacity: 0.8; flex-wrap: wrap; text-align: center; }
+
+/* GARANTIA */
+.sec-garantia { background: var(--creme); }
+.garantia-inner { max-width: 600px; margin: 0 auto; background: white; border-radius: 24px; padding: 40px; text-align: center; border: 2px solid var(--terracota); }
+.garantia-inner .g-big { font-size: 72px; margin-bottom: 16px; display: block; }
+.garantia-inner h3 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--marrom); margin-bottom: 12px; }
+.garantia-inner p { font-size: 16px; color: var(--texto-muted); line-height: 1.65; }
+
+/* FOOTER */
+footer { background: var(--preto-bf); color: rgba(255,255,255,0.6); text-align: center; padding: 28px 24px; font-size: 13px; line-height: 1.7; }
+footer strong { color: rgba(255,255,255,0.9); }
+
+@media (max-width: 600px) {
+  section { padding: 48px 16px; }
+  .oferta-box, .valor-box { padding: 28px 20px; }
+  .garantia-inner { padding: 28px 20px; }
+  .preco-por { font-size: 52px; }
+}
