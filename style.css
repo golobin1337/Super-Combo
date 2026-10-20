@@ -83,6 +83,7 @@ section { padding: 64px 24px; }
 .valor-hoje .label { font-size: 15px; color: var(--texto-muted); font-weight: 600; }
 .valor-hoje .num { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 900; color: var(--terracota); line-height: 1; }
 .valor-hoje .num span { font-size: 26px; vertical-align: super; }
+.valor-hoje .cta-btn { margin-top: 22px; white-space: nowrap; padding: 16px 28px; font-size: clamp(15px, 4.2vw, 20px); }
 
 /* PARA QUEM / BENEFÍCIOS */
 .sec-beneficios { background: var(--branco); }
@@ -116,6 +117,8 @@ section { padding: 64px 24px; }
 .inclui-lista { list-style: none; text-align: left; margin-bottom: 28px; display: grid; gap: 10px; max-width: 480px; margin-left: auto; margin-right: auto; }
 .inclui-lista li { display: flex; align-items: center; gap: 11px; font-size: 14.5px; font-weight: 600; }
 .inclui-lista li::before { content: '✓'; background: var(--terracota); color: white; width: 21px; height: 21px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 12px; flex-shrink: 0; }
+.inclui-lista li.bonus { color: var(--mostarda); font-weight: 800; }
+.inclui-lista li.bonus::before { content: '🎁'; background: var(--mostarda); font-size: 12px; }
 .preco-box { background: rgba(255,255,255,0.07); border-radius: 16px; padding: 24px; margin-bottom: 26px; border: 1px solid rgba(232,163,23,0.4); }
 .preco-de { font-size: 16px; opacity: 0.6; text-decoration: line-through; margin-bottom: 4px; }
 .preco-por { font-family: 'Playfair Display', serif; font-size: clamp(50px, 11vw, 68px); font-weight: 900; line-height: 1; color: var(--mostarda); }
@@ -138,6 +141,9 @@ footer { background: var(--preto-bf); color: rgba(255,255,255,0.6); text-align: 
 footer strong { color: rgba(255,255,255,0.9); }
 
 @media (max-width: 600px) {
+  .tudo-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .tudo-card { flex-direction: column; text-align: center; gap: 8px; padding: 16px 10px; }
+  .tudo-card .txt { font-size: 13px; }
   section { padding: 48px 16px; }
   .oferta-box, .valor-box { padding: 28px 20px; }
   .garantia-inner { padding: 28px 20px; }
