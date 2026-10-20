@@ -85,6 +85,13 @@ section { padding: 64px 24px; }
 .valor-hoje .num span { font-size: 26px; vertical-align: super; }
 .valor-hoje .cta-btn { margin-top: 22px; white-space: nowrap; padding: 16px 28px; font-size: clamp(15px, 4.2vw, 20px); }
 
+/* PONTE PARA A OFERTA */
+.ponte-oferta { text-align: center; max-width: 620px; margin: 40px auto 0; }
+.ponte-oferta p { font-size: 18px; line-height: 1.6; color: var(--texto); font-weight: 500; }
+.ponte-oferta strong { color: var(--verde-escuro); font-weight: 800; }
+.ponte-oferta .seta { display: inline-block; margin-top: 14px; font-size: 30px; font-weight: 700; color: var(--verde); text-decoration: none; animation: descer 1.6s ease-in-out infinite; }
+@keyframes descer { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
 /* PARA QUEM / BENEFÍCIOS */
 .sec-beneficios { background: var(--branco); }
 .benef-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
