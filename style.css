@@ -119,6 +119,7 @@ section { padding: 64px 24px; }
 /* OFERTA */
 .sec-oferta { background: var(--preto-bf); color: white; }
 .oferta-box { max-width: 680px; margin: 0 auto; background: rgba(255,255,255,0.05); border-radius: 28px; border: 2px solid var(--mostarda); padding: 44px 40px; text-align: center; }
+.oferta-img { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto 24px; }
 .oferta-box .titulo { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 32px); font-weight: 900; margin-bottom: 6px; color: var(--mostarda); }
 .oferta-box .subtitulo { font-size: 16px; opacity: 0.8; margin-bottom: 28px; }
 .inclui-lista { list-style: none; text-align: left; margin-bottom: 28px; display: grid; gap: 10px; max-width: 480px; margin-left: auto; margin-right: auto; }
