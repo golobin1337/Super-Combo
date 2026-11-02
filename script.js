@@ -5,7 +5,7 @@
   var total = slides.length;
   var atual = 0;
   var visiveis = 3;
-  function getVisiveis() { var w = window.innerWidth; if (w <= 400) return 1; if (w <= 600) return 2; return 3; }
+  function getVisiveis() { return window.innerWidth <= 600 ? 1 : 3; }
   function calcularLargura() {
     visiveis = getVisiveis();
     var outer = track.parentElement;
@@ -29,6 +29,8 @@
   function criarDots() {
     dotsContainer.innerHTML = '';
     var max = maxIndex();
+    document.getElementById('carrosselWrapper').classList.toggle('sem-nav', max === 0);
+    if (max === 0) return;
     for (var i = 0; i <= max; i++) {
       var btn = document.createElement('button');
       btn.className = 'carr-dot' + (i === 0 ? ' ativo' : '');
@@ -38,6 +40,19 @@
     }
   }
   window.moverCarrossel = function(dir) { moverPara(atual + dir); };
-  window.addEventListener('resize', function() { calcularLargura(); criarDots(); moverPara(0); });
-  if (track && total > 0) { calcularLargura(); criarDots(); moverPara(0); }
+  var ultimaLargura = window.innerWidth;
+  window.addEventListener('resize', function() {
+    if (window.innerWidth === ultimaLargura) return;
+    ultimaLargura = window.innerWidth;
+    calcularLargura(); criarDots(); moverPara(0);
+  });
+  if (track && total > 0) {
+    var inicioX = 0;
+    track.addEventListener('touchstart', function(e) { inicioX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', function(e) {
+      var dx = e.changedTouches[0].clientX - inicioX;
+      if (Math.abs(dx) > 40) moverPara(atual + (dx < 0 ? 1 : -1));
+    });
+    calcularLargura(); criarDots(); moverPara(0);
+  }
 })();
