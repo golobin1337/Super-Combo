@@ -20,7 +20,8 @@ body { font-family: 'Nunito', sans-serif; color: var(--texto); background: var(-
 
 /* TOPBAR BLACK FRIDAY */
 .topbar { background: var(--preto-bf); color: white; text-align: center; padding: 11px 12px; font-size: clamp(11px, 3.4vw, 14px); font-weight: 700; letter-spacing: 0.3px; white-space: nowrap; }
-.topbar span { background: var(--mostarda); color: var(--preto-bf); border-radius: 20px; padding: 2px 10px; font-weight: 900; margin: 0 4px; }
+.topbar .contador { background: var(--mostarda); color: var(--preto-bf); border-radius: 20px; padding: 2px 10px; font-weight: 900; margin: 0 4px; }
+.topbar .contador { font-variant-numeric: tabular-nums; }
 
 /* HERO */
 .hero { background: linear-gradient(180deg, #FFF9F0 0%, #FBEEDC 100%); padding: 52px 24px 48px; text-align: center; position: relative; overflow: hidden; border-bottom: 4px solid var(--terracota); }

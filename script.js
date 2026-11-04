@@ -56,3 +56,22 @@
     calcularLargura(); criarDots(); moverPara(0);
   }
 })();
+
+(function() {
+  var FIM_LOTE_1 = new Date('2026-11-05T18:45:00-03:00').getTime();
+  var contador = document.getElementById('contadorLote');
+  var texto = document.getElementById('topbarTexto');
+  function doisDigitos(n) { return (n < 10 ? '0' : '') + n; }
+  function atualizar() {
+    var resta = Math.floor((FIM_LOTE_1 - Date.now()) / 1000);
+    if (resta <= 0) {
+      texto.textContent = '2º LOTE ABERTO';
+      contador.style.display = 'none';
+      clearInterval(intervalo);
+      return;
+    }
+    contador.textContent = doisDigitos(Math.floor(resta / 3600)) + ':' + doisDigitos(Math.floor(resta / 60) % 60) + ':' + doisDigitos(resta % 60);
+  }
+  var intervalo = setInterval(atualizar, 1000);
+  atualizar();
+})();
