@@ -61,6 +61,7 @@
   var FIM_LOTE_1 = new Date('2026-11-05T18:45:00-03:00').getTime();
   var contador = document.getElementById('contadorLote');
   var texto = document.getElementById('topbarTexto');
+  if (!contador) return;
   function doisDigitos(n) { return (n < 10 ? '0' : '') + n; }
   function atualizar() {
     var resta = Math.floor((FIM_LOTE_1 - Date.now()) / 1000);
